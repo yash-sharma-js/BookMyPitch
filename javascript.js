@@ -4,7 +4,7 @@ function validateLogin() {
     var password = document.getElementById("login-password").value;
 
     if (username === "user" && password === "pass" && userType =="manager" ) {
-        window.location.href = "#";
+        window.location.href = "Owner.html";
         alert("Login successful as " + userType);
         return true;
     }
