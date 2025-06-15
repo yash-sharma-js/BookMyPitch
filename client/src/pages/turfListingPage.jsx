@@ -24,7 +24,7 @@ function TurfListingPage() {
         
         console.log(queryParams.get("date"))
         const res = await axios.post(
-          "https://bookmypitch.onrender.com/api/booking/checkAvailability",
+          `${import.meta.env.VITE_SERVER_URL}/api/booking/checkAvailability`,
            requestData
         );
         console.log(res.data)

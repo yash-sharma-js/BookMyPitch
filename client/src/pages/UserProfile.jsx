@@ -19,7 +19,7 @@ const UserProfile = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `hhttps://bookmypitch.onrender.com/api/booking/getBookings/user/${user._id}` , headers
+          `${import.meta.env.VITE_SERVER_URL}/api/booking/getBookings/user/${user._id}` , headers
         );
         // console.log(res.data._doc);
         console.log(res.data[1]);
@@ -38,7 +38,7 @@ const UserProfile = () => {
     if (confirmation) {
       console.log("Yes");
       try {
-        const res = await axios.delete(`hhttps://bookmypitch.onrender.com/api/users/delete/user/${user._id}` , headers) 
+        const res = await axios.delete(`${import.meta.env.VITE_SERVER_URL}/api/users/delete/user/${user._id}` , headers) 
         console.log(res)
         if(res.status === 200 || res.status === 204){
           removeUser()

@@ -16,7 +16,7 @@ const Success = () => {
     console.log(bookingId);
     const deleteBooking = async () => {
       const res = await axios.put(
-        `https://bookmypitch.onrender.com/api/booking/payment/success/${bookingId}`,
+        `${import.meta.env.VITE_SERVER_URL}/api/booking/payment/success/${bookingId}`,
         {},
         { headers }
       );

@@ -8,8 +8,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
+
 function Register() {
   const [email, setEmail] = useState("");
+  const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:8080";
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [pass, setPass] = useState("");
@@ -19,7 +21,7 @@ function Register() {
     e.preventDefault();
     console.log(email, pass, fname, lname, phoneno);
     try {
-      const res = await axios.post("https://bookmypitch.onrender.com/api/users/register", {
+      const res = await axios.post(VITE_SERVER_URL + "/api/users/register", {
         firstName: fname,
         lastName: lname,
         email,

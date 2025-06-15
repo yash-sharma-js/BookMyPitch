@@ -111,7 +111,7 @@ function RegisterTurf() {
           "Content-Type": "multipart/form-data",
         };
         const response = await axios.post(
-          "https://bookmypitch.onrender.com/api/turf/register",
+          `${import.meta.env.VITE_SERVER_URL}/api/turf/register`,
           formData,
           {
             headers: headers,

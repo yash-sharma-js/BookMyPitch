@@ -28,7 +28,7 @@ function UpdateUser() {
     const getUserInfo = async () => {
       try {
         const res = await axios.get(
-          `https://bookmypitch.onrender.com/api/users/${user._id}`
+          `${import.meta.env.VITE_SERVER_URL}/api/users/${user._id}`
         );
         console.log(res.data);
         setFname(res.data.firstName)
@@ -52,7 +52,7 @@ function UpdateUser() {
 
     try {
       const res = await axios.put(
-        `https://bookmypitch.onrender.com/api/users/update/${user._id}`,
+        `${import.meta.env.VITE_SERVER_URL}/api/users/update/${user._id}`,
         {
           firstName: fname,
           lastName: lname,

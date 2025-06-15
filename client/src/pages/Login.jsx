@@ -14,6 +14,7 @@ function Login() {
   const [pass, setPass] = useState("");
   const navigate = useNavigate();
   const { setUser } = useUserStore();
+  const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:8080";
 
   const submitData = async (e) => {
     e.preventDefault();
@@ -25,7 +26,7 @@ function Login() {
         return;
       }
 
-      const res = await axios.post("https://bookmypitch.onrender.com/api/users/login", {
+      const res = await axios.post(VITE_SERVER_URL + "/api/users/login", {
         email,
         password: pass,
       });

@@ -37,7 +37,7 @@ function UpdateManager() {
     const fetchInfo = async () => {
       try {
         const res = await axios.get(
-          `https://bookmypitch.onrender.com/api/turf/${user._id}`
+          `${import.meta.env.VITE_SERVER_URL}/api/turf/${user._id}`
         );
         console.log(res);
         if (res.status === 200) {
@@ -133,7 +133,7 @@ function UpdateManager() {
           "Content-Type": "multipart/form-data",
         };
         const response = await axios.put(
-          `https://bookmypitch.onrender.com/api/turf/update/${user._id}`,
+          `${import.meta.env.VITE_SERVER_URL}/api/turf/update/${user._id}`,
           body,
           
         );

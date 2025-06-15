@@ -99,7 +99,7 @@ function RegisterTurf1() {
         "Content-Type": "multipart/form-data",
       };
       const response = await axios.post(
-        "http://localhost:5000/api/turf/register",
+        `${import.meta.env.VITE_SERVER_URL}/api/turf/register`,
         formData,
         {
           headers: headers,

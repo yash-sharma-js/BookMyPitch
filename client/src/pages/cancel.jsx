@@ -16,7 +16,7 @@ const Cancel = () => {
     console.log(bookingId);
     const deleteBooking = async () => {
       const res = await axios.delete(
-        `https://bookmypitch.onrender.com/api/booking/delete/${bookingId}`,
+        `${import.meta.env.VITE_SERVER_URL}/api/booking/delete/${bookingId}`,
         { headers }
       );
       console.log(res);

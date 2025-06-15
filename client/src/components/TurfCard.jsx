@@ -21,7 +21,7 @@ function TurfCard(props) {
       className="relative w-[25vw] rounded-lg overflow-hidden hover:shadow-2xl hover:border-2 hover:border-black"
     >
       <img
-        src={`https://bookmypitch.onrender.com/uploads/${imgUrl}`}
+        src={`${import.meta.env.VITE_SERVER_URL}/uploads/${imgUrl}`}
         alt=""
         className="object-cover w-full h-[50vh]"
       />
